@@ -1,10 +1,14 @@
 def PythagoreanTriplet(numbers):
   for i in range(len(numbers)):
-    for j in range(i+1, len(numbers)):
-      for k in range(j+1, len(numbers)):
+    for j in range(len(numbers)):
+      if i == j:
+        continue
+      for k in range(len(numbers)):
+        if i == k or j == k:
+          continue
+		  
         if numbers[k]**2 == numbers[i]**2 + numbers[j]**2:
           return True
-        continue
   
   return False;
 
